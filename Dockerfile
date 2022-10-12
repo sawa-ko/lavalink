@@ -13,6 +13,7 @@ RUN apt upgrade -y
 RUN apt install wget
 RUN apt install openjdk-17-jre openjdk-17-jdk -y
 
+# Workdir for app
 WORKDIR /app
 
 # Download official version of Lavalink
