@@ -1,11 +1,11 @@
+FROM eclipse-temurin:latest
+
 # CONFIGURE ARGS
 ###########################
 #ARG VERSION=latest
 #ARG PORT=1234
 #ARG PASSWORD=youshallnotpass
 ###########################
-
-FROM eclipse-temurin:latest
 
 # Install necessary tools
 RUN apt update -y
@@ -15,8 +15,13 @@ RUN apt install openjdk-17-jre openjdk-17-jdk -y
 
 WORKDIR /app
 
-# Download latest official version of Lavalink
-RUN wget https://github.com/freyacodes/Lavalink/releases/$VERSION/download/Lavalink.jar
+# Download official version of Lavalink
+RUN if [ "$VERSION" == "latest" ]; \
+    then \
+        wget https://github.com/freyacodes/Lavalink/releases/latest/download/Lavalink.jar; \
+    else \
+        wget "https://github.com/freyacodes/Lavalink/releases/download/$VERSION/Lavalink.jar"; \
+fi
 
 # Download default config
 RUN wget -O application.yml https://raw.githubusercontent.com/freyacodes/Lavalink/master/LavalinkServer/application.yml.example
