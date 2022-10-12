@@ -11,7 +11,7 @@ FROM eclipse-temurin:latest
 RUN apt update -y
 RUN apt upgrade -y
 RUN apt install wget
-RUN apt install openjdk-8-jre openjdk-8-jdk -y
+RUN apt install default-jre default-jdk -y
 
 # Workdir for app
 WORKDIR /app
