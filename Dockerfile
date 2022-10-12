@@ -1,4 +1,4 @@
-FROM eclipse-temurin:11.0.16.1_1-jre
+FROM eclipse-temurin:16
 
 # CONFIGURE ARGS
 ###########################
