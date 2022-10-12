@@ -17,7 +17,7 @@ RUN apt install openjdk-17-jre openjdk-17-jdk -y
 WORKDIR /app
 
 # Download official version of Lavalink
-RUN if [ "$VERSION" == "latest" ]; \
+RUN if [ "$VERSION" == "latest" ] || [ -z "$VERSION" ]; \
     then \
         wget https://github.com/freyacodes/Lavalink/releases/latest/download/Lavalink.jar; \
     else \
