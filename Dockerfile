@@ -1,4 +1,4 @@
-FROM azul/zulu-openjdk:13.0.10
+FROM azul/zulu-openjdk-debian:13.0.10
 
 # CONFIGURE ARGS
 ###########################
@@ -9,7 +9,6 @@ FROM azul/zulu-openjdk:13.0.10
 
 # Install necessary tools
 RUN apt update -y
-RUN apt upgrade -y
 RUN apt install wget -y
 RUN apt install software-properties-common -y
 RUN apt update -y
