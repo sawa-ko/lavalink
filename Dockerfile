@@ -1,3 +1,9 @@
+# CONFIGURE ARGS
+###########################
+#ARG PORT=1234
+#ARG PASSWORD=youshallnotpass
+###########################
+
 FROM eclipse-temurin:latest
 
 # Install necessary tools
