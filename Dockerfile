@@ -1,4 +1,4 @@
-FROM eclipse-temurin:latest
+FROM azul/zulu-openjdk:13.0.10
 
 # CONFIGURE ARGS
 ###########################
@@ -10,12 +10,8 @@ FROM eclipse-temurin:latest
 # Install necessary tools
 RUN apt update -y
 RUN apt upgrade -y
-RUN apt install wget
+RUN apt install wget -y
 RUN apt install software-properties-common -y
-RUN apt update -y
-
-# Install JAVA
-RUN apt install openjdk-11-jre -y
 RUN apt update -y
 
 # Workdir for app
