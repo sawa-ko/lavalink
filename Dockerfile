@@ -2,14 +2,13 @@ FROM eclipse-temurin:16
 
 # CONFIGURE ARGS
 ###########################
-#ARG VERSION=latest
-#ARG PORT=1234
-#ARG PASSWORD=youshallnotpass
+ARG VERSION=latest
+ARG PORT=2333
+ARG PASSWORD=youshallnotpass
 ###########################
 
 # Install necessary tools
 RUN apt update -y
-RUN apt upgrade -y
 RUN apt install wget
 RUN apt install software-properties-common -y
 RUN apt update -y
