@@ -2,22 +2,21 @@ FROM eclipse-temurin:16
 
 # CONFIGURE ARGS
 ###########################
-ARG VERSION=latest
-ARG PORT=2333
-ARG PASSWORD=youshallnotpass
+ARG VERSION="3.6.1"
+ARG PORT="2333"
+ARG PASSWORD="youshallnotpass"
 ###########################
 
 # Install necessary tools
 RUN apt update -y
-RUN apt install wget
-RUN apt install software-properties-common -y
+RUN apt install wget -y
 RUN apt update -y
 
 # Workdir for app
 WORKDIR /app
 
 # Download official version of Lavalink
-RUN if [ "$VERSION" == "latest" ]; \
+RUN if [ "$VERSION" = "latest" ]; \
     then \
         wget https://github.com/freyacodes/Lavalink/releases/latest/download/Lavalink.jar; \
     else \
