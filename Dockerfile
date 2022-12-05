@@ -2,7 +2,7 @@ FROM eclipse-temurin:16
 
 # CONFIGURE ARGS
 ###########################
-ARG VERSION="3.6.1"
+ARG VERSION="latest"
 ARG PORT="2333"
 ARG PASSWORD="youshallnotpass"
 ###########################
