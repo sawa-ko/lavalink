@@ -17,7 +17,7 @@ RUN apt update -y
 WORKDIR /app
 
 # Download official version of Lavalink
-RUN if [ "$VERSION" == "latest" ] || [ -z "$VERSION" ]; \
+RUN if [ "$VERSION" == "latest" ]; \
     then \
         wget https://github.com/freyacodes/Lavalink/releases/latest/download/Lavalink.jar; \
     else \
